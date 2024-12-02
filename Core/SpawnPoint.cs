@@ -24,8 +24,8 @@ public class SpawnPoint : MonoBehaviour
       return   spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position;
     }
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, 1);
+        Gizmos.DrawSphere(transform.position, 1);
     }
 }
