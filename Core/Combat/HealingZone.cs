@@ -102,9 +102,16 @@ public class HealingZone : NetworkBehaviour
                 player.Health.RestoreHealth(healthPerTick);
 
                 HealPower.Value -= 1;
+
+                if(HealPower.Value == 0)
+                {
+                    remainingCooldown = healCooldown;
+                }
                
             }
         }
+ 
+        tickTimer = tickTimer % ( 1 / healTickRate);
 
     }
         
